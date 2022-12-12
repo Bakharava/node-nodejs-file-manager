@@ -25,14 +25,21 @@ const startWork = async () => {
   }
 
   input.on('data', data => {
-      callRequestedModule(data.toString('utf8').replace(/\r?\n/g, ""));
+    const parsedData = data.toString('utf8').replace(/\r?\n/g, "")
+    if (parsedData === '.exit') {
+      return handleExit()
+    }
+      callRequestedModule(parsedData);
   })
   await process.chdir(os.homedir())
   getDirFromNavigation();
 
-  process.on('SIGINT', () => {
+  const handleExit = () => {
     process.stdout.write(`Thank you for using File Manager, ${userName}, goodbye!${os.EOL}`)
     process.exit();
+  }
+  process.on('SIGINT', () => {
+    handleExit()
   });
 }
 
