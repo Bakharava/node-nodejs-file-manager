@@ -1,4 +1,5 @@
 import os from 'os';
+
 import { handleInputError, handleOperationError } from './Hints/errorHandling.js';
 import { callRequestedModule } from './utils.js';
 import { getDirFromNavigation } from './os/os.js';
@@ -8,13 +9,13 @@ const getUsernameHint ='Please write your user name in args as " -- --username={
 
 const startWork = async () => {
   let userName = '';
-  const args = process.argv.slice(2)
+  const args = process.argv.slice(2);
   let input = process.stdin;
   try {
-    const userNameArg = args.find(arg => arg.startsWith(prefix))
-    userName = userNameArg.split('=')[1]
+    const userNameArg = args.find(arg => arg.startsWith(prefix));
+    userName = userNameArg.split('=')[1];
     if (userName.length) {
-      process.stdout.write(`Welcome to File Manager, ${userName}${os.EOL}`)
+      process.stdout.write(`Welcome to File Manager, ${userName}${os.EOL}`);
 
     } else {
       return handleInputError(getUsernameHint);
@@ -25,13 +26,13 @@ const startWork = async () => {
   }
 
   input.on('data', data => {
-    const parsedData = data.toString('utf8').replace(/\r?\n/g, "")
+    const parsedData = data.toString('utf8').replace(/\r?\n/g, "");
     if (parsedData === '.exit') {
-      return handleExit()
+      return handleExit();
     }
       callRequestedModule(parsedData);
   })
-  await process.chdir(os.homedir())
+  await process.chdir(os.homedir());
   getDirFromNavigation();
 
   const handleExit = () => {
@@ -39,8 +40,8 @@ const startWork = async () => {
     process.exit();
   }
   process.on('SIGINT', () => {
-    handleExit()
+    handleExit();
   });
 }
 
-startWork()
+startWork();

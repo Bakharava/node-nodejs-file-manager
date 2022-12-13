@@ -8,10 +8,10 @@ export const navigate = (pathToDir = null) => {
     } else {
       process.chdir(pathToDir);
     }
-    process.stdout.write(`You are in ${process.cwd()}${addEOLending()}`)
+    process.stdout.write(`You are in ${process.cwd()}${addEOLending()}`);
   } catch (err) {
-    process.stdout.write(`You are in ${process.cwd()}${addEOLending()}`)
-   handleOperationError(err)
+    process.stdout.write(`You are in ${process.cwd()}${addEOLending()}`);
+   handleOperationError(err);
   }
+};
 
-}

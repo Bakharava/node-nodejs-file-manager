@@ -1,6 +1,7 @@
-import * as fs from 'fs';
+import fs from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+
 import { handleOperationError } from '../Hints/errorHandling.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,7 +17,7 @@ export const readFile = async (fileName) => {
   });
 
   stream.on('data', (chunk) => {
-    data += chunk
+    data += chunk;
   })
 
   stream.on('end', () =>  process.stdout.write(`${data}${addEOLending()}`));

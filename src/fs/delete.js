@@ -1,7 +1,7 @@
 import { rm } from 'fs/promises';
 import fs from 'fs';
 
-import {handleOperationError} from '../Hints/errorHandling.js';
+import { handleOperationError } from '../Hints/errorHandling.js';
 
 export const removeFile = async (pathToFile) => {
   try{
@@ -11,6 +11,4 @@ export const removeFile = async (pathToFile) => {
   } catch (err) {
     handleOperationError(err);
   }
-
 };
-

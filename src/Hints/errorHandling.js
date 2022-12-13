@@ -1,7 +1,7 @@
 import { addEOLending } from '../os/os.js';
 
 const handleInputError = (errorHint)=> {
-  process.stdout.write(`Invalid input. ${errorHint}${addEOLending()}`)
+  process.stdout.write(`Invalid input. ${errorHint}${addEOLending()}`);
 }
 
 const handleOperationError = (err) => {

@@ -1,4 +1,5 @@
-import {readdir} from 'fs/promises';
+import { readdir } from 'fs/promises';
+
 import { handleOperationError } from '../Hints/errorHandling.js';
 
 export const displayFoldersAndFiler = async () => {
@@ -21,7 +22,7 @@ export const displayFoldersAndFiler = async () => {
 
   const sortedFolders = folderList.sort().map(item => ({name: item.name, type: 'directory'}));
   const sortedFiles = fileList.sort().map(item => ({name: item.name, type: 'file'}));
-  const listForDisplaying = [...sortedFolders, ...sortedFiles]
+  const listForDisplaying = [...sortedFolders, ...sortedFiles];
 
-  console.table(listForDisplaying)
-}
+  console.table(listForDisplaying);
+};

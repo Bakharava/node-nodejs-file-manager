@@ -1,7 +1,7 @@
-import * as fs from 'fs';
+import fs from 'fs';
 import zlib from 'zlib';
 import { join } from 'path';
-import {handleOperationError} from '../Hints/errorHandling.js';
+import { handleOperationError } from '../Hints/errorHandling.js';
 
 export const decompress = async (pathToOriginFile, pathToTargetFolder) => {
   const input = fs.createReadStream(pathToOriginFile);

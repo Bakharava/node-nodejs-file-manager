@@ -1,6 +1,6 @@
-import {copyFile} from './copy.js';
-import {removeFile} from './delete.js';
-import {handleOperationError} from '../Hints/errorHandling.js';
+import { copyFile } from './copy.js';
+import { removeFile } from './delete.js';
+import { handleOperationError } from '../Hints/errorHandling.js';
 
 export const moveFile = async (pathToOriginFile, pathToTargetFolder) => {
   try {
@@ -9,4 +9,4 @@ export const moveFile = async (pathToOriginFile, pathToTargetFolder) => {
   } catch (err) {
     handleOperationError(err);
   }
-}
+};

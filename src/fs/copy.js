@@ -15,6 +15,5 @@ export const copyFile = async (pathToOriginFile, pathToTargetFolder) => {
     handleOperationError(err);
   });
 
- readStream.pipe(writeStream)
+ readStream.pipe(writeStream);
 };
-

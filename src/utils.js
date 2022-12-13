@@ -6,11 +6,11 @@ import { addEOLending, handleOsCommands } from './os/os.js';
 import { navigate } from './nav/nav.js';
 
 export const callRequestedModule = (inputData) => {
-  const dataToArr = inputData?.split(' ')
+  const dataToArr = inputData?.split(' ');
   const module = dataToArr[0];
   const firstArg = dataToArr.length > 1 && dataToArr[1];
   const secondArg = dataToArr.length > 2 && dataToArr[2];
-  console.log(module)
+
   switch (module) {
     case 'ls':
       displayFoldersAndFiler();
@@ -76,5 +76,5 @@ const getHints = () => {
     hash path_to_file,
     compress path_to_file path_to_destination,
     decompress path_to_file path_to_destination
-  ${addEOLending()}`)
-}
+  ${addEOLending()}`);
+};

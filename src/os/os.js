@@ -3,7 +3,7 @@ import os from 'os';
 export const getDirFromNavigation = () => {
   let dirName = process.cwd();
 
-  process.stdout.write(`You are currently in ${dirName}${os.EOL}`)
+  process.stdout.write(`You are currently in ${dirName}${os.EOL}`);
 
   return dirName;
 }
@@ -11,25 +11,25 @@ export const getDirFromNavigation = () => {
 export const handleOsCommands = (arg) => {
   switch (arg){
     case '--architecture':
-      getArchitecture()
+      getArchitecture();
       break;
     case '--cpus':
-     getCpuInfo()
+     getCpuInfo();
       break;
   case '--EOL':
-     getEolInfo()
+     getEolInfo();
       break;
     case '--homedir':
-      getHomeDir()
+      getHomeDir();
       break;
     case '--username':
-      getUserName()
+      getUserName();
       break;
   }
 }
 
 const getArchitecture = () => {
-  process.stdout.write(`os.arch()${addEOLending()}`)
+  process.stdout.write(`os.arch()${addEOLending()}`);
 };
 
 const getCpuInfo = () => {
@@ -56,5 +56,5 @@ const getUserName = () => {
 };
 
 export const addEOLending = () => {
-  return os.EOL
-}
+  return os.EOL;
+};
