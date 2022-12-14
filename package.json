@@ -1,0 +1,19 @@
+{
+  "name": "node-nodejs-file-manager",
+  "version": "1.0.0",
+  "description": "This repository is the second home work of NodeJs course",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:n": "node src/app.js --username=Volha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bakharava/node-nodejs-file-manager"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Bakharava",
+  "license": "ISC"
+}
